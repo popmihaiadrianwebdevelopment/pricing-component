@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+:root {
+    --very-light-grayish-blue: hsl(240, 78%, 98%);
+    --light-grayish-blue: hsl(234, 14%, 74%);
+    --grayish-blue: hsl(233, 13%, 49%);
+    --dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    background-color: var(--very-light-grayish-blue);
+    color: var(--dark-grayish-blue);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    min-height:100vh ;
+    margin-bottom: 0;
+}
+
+body::before {
+    content: '';
+    background-image: url(/images/bg-top.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    background-image: url(/images/bg-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    z-index: -1;
+}
+
+li {
+    list-style-type: none;
+}
+
+.container {
+    margin: auto;
+    max-width: 100%;
+    width: 1200px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    color: var(--grayish-blue);
+}
+.toggle-container {
+    color: var(--light-grayish-blue);
+    margin-bottom: 40px;
+}
+
+.pricebox {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin:10px;
+    width: 400px;
+    height: 450px;
+}
+
+.pricebox h4 {
+    margin: 0;
+}
+
+.pricebox p {
+    font-size: 4em;
+    margin: 20px 0;
+}
+
+.pricebox .monthly {
+    display: none;
+}
+
+.show-monthly .monthly {
+    display:block;
+}
+
+.show-monthly .annualy {
+    display: none;
+}
+
+.pricebox ul {
+    padding: 0;
+    border-top: 1px solid var(--light-grayish-blue);
+}
+
+.pricebox ul li {
+    border-bottom: 1px solid var(--light-grayish-blue);
+    padding: 15px 0;
+    color: var(--grayish-blue);
+}
+
+.pricebox button {
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    border: none;
+    outline: none;
+    color: var(--very-light-grayish-blue);
+    transition: .3s all;
+    padding: 15px;
+    width: 100%;
+    text-transform: uppercase;
+    font-family:'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.pricebox button:hover {
+    border: 1px solid var(--dark-grayish-blue);
+    background: transparent;
+    color: hsl(237, 63%, 64%);
+    padding: 14px;
+}
+
+.premium {
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    color: #fff;
+    transform: scale(1.15);
+}
+
+.premium > * {
+    transform: scale(0.869);
+}
+
+.premium button{
+    background-image: none;
+    color: hsl(237, 63%, 64%);
+}
+
+.premium ul {
+    border-color: #fff;
+}
+
+
+.premium ul li {
+    color: #fff;
+    border-color: #fff;
+    
+}
+
+.premium button:hover{
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.toggle-container label{
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    height: 30px;
+    width: 60px;
+}
+
+
+.toggle-container .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    width: 25px;
+    height: 25px;
+   
+}
+
+
+.toggle-container input {
+    position: absolute;
+    top: -999999px;
+}
+
+.toggle-container input:checked + label .ball {
+    transform: translateX(30px);
+}
+@media screen and (max-width: 930px) {
+ .flex {
+    flex-direction: column;
+ }
+ .premium {
+    transform: scale(1);
+ }
+ .premium > * {
+    transform: scale(1);
+ }
+}
